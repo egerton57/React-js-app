@@ -62,7 +62,7 @@ class Register extends Component {
         return (
             <React.Fragment>
                 <div className="login-BG">
-                    <h2>REGISTER NOW</h2>
+                    <h2>REGISTER</h2>
                     <br />
 
                     <div>

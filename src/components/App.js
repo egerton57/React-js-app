@@ -17,15 +17,17 @@ function App() {
 
             <div className="row">
 
+              <div className="col-md-8" style={{ 'margin-left': '-30px' }}>
+                <Slideshow />
+              </div>
+
               <div className="col-md-4">
                 <Route exact path="/" component={Login} />
 
                 <Route path="/register" component={Register} />
               </div>
 
-              <div className="col-md-8" style={{'margin-left':'-30px'}}>
-                <Slideshow />
-              </div>
+
 
             </div>
 

@@ -19,12 +19,10 @@ const fadeProperties = {
     console.log(`fade transition from ${oldIndex} to ${newIndex}`);
   }
 }
- 
+ //<img src="N57-Weather.png" alt="" width="50%" height="auto" />
 const Slideshow = () => {
   return (
     <Fade {...fadeProperties}>
-
-    <img src="N57-Weather.png" alt="" width="50%" height="auto" />
 
       <div className="each-fade">
         <div className="image-container" >

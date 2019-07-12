@@ -26,31 +26,31 @@ const Slideshow = () => {
 
       <div className="each-fade">
         <div className="image-container" >
-          <img src={fadeImages[0]} alt="" className="Weather-Slide img-reponsive"/>
+          <img src={fadeImages[0]} alt="" className="Weather-Slide img-fluid"/>
         </div>
       </div>
 
       <div className="each-fade">
         <div className="image-container">
-          <img src={fadeImages[1]} alt="" className="Weather-Slide img-reponsive"/>
+          <img src={fadeImages[1]} alt="" className="Weather-Slide img-fluid"/>
         </div>
       </div>
 
       <div className="each-fade">
         <div className="image-container">
-          <img src={fadeImages[2]} alt="" className="Weather-Slide img-reponsive"/>
+          <img src={fadeImages[2]} alt="" className="Weather-Slide img-fluid"/>
         </div>
       </div>
 
       <div className="each-fade">
         <div className="image-container">
-          <img src={fadeImages[3]} alt="" className="Weather-Slide img-reponsive"/>
+          <img src={fadeImages[3]} alt="" className="Weather-Slide img-fluid"/>
         </div>
       </div>
 
       <div className="each-fade">
         <div className="image-container">
-          <img src={fadeImages[4]} alt="" className="Weather-Slide img-reponsive"/>
+          <img src={fadeImages[4]} alt="" className="Weather-Slide img-fluid"/>
         </div>
       </div>
 

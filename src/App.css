@@ -31,10 +31,15 @@
 .login-BG {
 
   background-color: rgb(245, 245, 245, 0.5);
-  padding: 15px 80px 15px 80px;
-  width: auto;
-  height: 500px;
+  padding: 15px 80px 12px 80px;
+  /*width: auto;
+  height: 500px;*/
 
+}
+
+.custom-input {
+  background-color: rgba(0, 0, 0, 0);
+  border:none;
 }
 
 .Register{
@@ -44,12 +49,8 @@
   background-color: rgb(119, 136, 153, 0.2)
 }
 
-.image-container{
-  
-  width: auto;
-  height: 500px;
-}
+
 .Weather-Slide{
-  width: auto;
-  height: 500px;
+  width: 100%;
+  height: auto;
 }

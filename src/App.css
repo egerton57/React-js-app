@@ -8,7 +8,7 @@
   pointer-events: none;
 }
 .User-Avatar {
-  width: 300px;
+  width: 150px;
   height: auto;
 }
 
@@ -28,12 +28,9 @@
   color: #61dafb;
 }
 
-.login-BG {
+.Main-Container {
 
   background-color: rgb(245, 245, 245, 0.5);
-  padding: 15px 80px 12px 80px;
-  /*width: auto;
-  height: 500px;*/
 
 }
 

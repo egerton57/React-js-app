@@ -55,7 +55,7 @@ class Login extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="login-BG">
+                <div>
 
                     <h2> LOGIN </h2>
 

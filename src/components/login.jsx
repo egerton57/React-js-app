@@ -89,7 +89,7 @@ class Login extends Component {
 
                     </form>
 
-                    <p className="Register">If you not registered yet, hit&nbsp;
+                    <p className="Register">Don't have an account ? &nbsp;
                         <Link to="/register">Register</Link>
                     </p>
 

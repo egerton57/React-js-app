@@ -1,8 +1,9 @@
 import React from 'react';
 import '../App.css';
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Register from './register';
 import Login from './login';
+import Slideshow from './Weather-img';
 
 function App() {
   return (
@@ -16,21 +17,15 @@ function App() {
 
             <div className="row">
 
-              <div className="col-md-3">&nbsp;</div>
+              <div className="col-md-4">
+                <Route exact path="/" component={Login} />
 
-              <div className="col-md-6">
-
-
-
-                  <Route exact path="/" component={Login}/>
-
-                  <Route path="/register" component={Register}/>
-
-
-
+                <Route path="/register" component={Register} />
               </div>
 
-              <div className="col-md-3">&nbsp;</div>
+              <div className="col-md-8" style={{'margin-left':'-30px'}}>
+                <Slideshow />
+              </div>
 
             </div>
 

@@ -13,7 +13,7 @@ function App() {
 
         <header className="App-header">
 
-          <div className="container">
+          <div className="container Main-Container">
 
             <div className="row">
 

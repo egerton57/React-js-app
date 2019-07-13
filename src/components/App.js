@@ -13,7 +13,7 @@ function App() {
 
         <header className="App-header">
 
-          <div className="container Main-Container">
+          <div className="container">
 
             <div className="row">
 
@@ -26,8 +26,6 @@ function App() {
 
                 <Route path="/register" component={Register} />
               </div>
-
-
 
             </div>
 

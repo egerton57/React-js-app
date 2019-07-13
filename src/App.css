@@ -1,16 +1,22 @@
 .App {
   text-align: center;
 }
-.Main-Container{
-    margin-top: 4%;
-    margin-bottom: 4%;
-}
+
+.Login-BG {
+
+    background-color: rgb(245, 245, 245, 0.5);
+  
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
 .Main-Logo {
     position: absolute;
     z-index: +1;
     margin-top: -40%;
-    margin-bottom: 40%;
+    margin-bottom: 0%;
     margin-left: -25%;
     margin-right: 50%;
     width: 50%;
@@ -36,20 +42,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-.Login-BG {
-
-  background-color: rgb(245, 245, 245, 0.5);
-
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 50px;
-  padding-right: 50px;
-
-  margin-left: 4%;
-  margin-right: 4%;
-
 }
 
 .custom-input {

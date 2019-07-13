@@ -15,13 +15,13 @@ function App() {
 
           <div className="container">
 
-            <div className="row Main-Container">
+            <div className="row">
 
               <div className="col-md-8">
                 <Slideshow />
               </div>
 
-              <div className="col-md-4" style={{'padding': '40px 40px 0px 40px'}}>
+              <div className="col-md-4 Login-BG">
                 <Route exact path="/" component={Login} />
 
                 <Route path="/register" component={Register} />

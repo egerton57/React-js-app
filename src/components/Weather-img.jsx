@@ -22,6 +22,7 @@ const fadeProperties = {
  //<img src="N57-Weather.png" alt="" width="50%" height="auto" />
 const Slideshow = () => {
   return (
+    <React.Fragment>
     <Fade {...fadeProperties}>
 
       <div className="each-fade">
@@ -55,6 +56,8 @@ const Slideshow = () => {
       </div>
 
     </Fade>
+    <img src="N57-Weather.png" className="Main-Logo" alt="App Logo" />
+    </React.Fragment>
   )
 }
 

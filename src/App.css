@@ -2,11 +2,17 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.Main-Logo {
+    position: absolute;
+    z-index: +1;
+    margin-top: -40%;
+    margin-bottom: 40%;
+    margin-left: -25%;
+    margin-right: 50%;
+    width: 50%;
+    height: auto;
 }
+
 .User-Avatar {
   width: 150px;
   height: auto;
@@ -28,9 +34,10 @@
   color: #61dafb;
 }
 
-.Main-Container {
+.Login-BG {
 
   background-color: rgb(245, 245, 245, 0.5);
+  padding: 25px;
 
 }
 

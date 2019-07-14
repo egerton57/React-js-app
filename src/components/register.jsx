@@ -4,8 +4,8 @@ import Swal from 'sweetalert2';
 import '../App.css';
 
 class Register extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             fullName: '',
             email: '',
@@ -32,6 +32,10 @@ class Register extends Component {
         })
     }
 
+    error = () => {
+        document.getElementById('errorMsgDiv').style.display = "block"
+    }
+
     doSubmit = (e) => {
         e.preventDefault();
 
@@ -41,11 +45,18 @@ class Register extends Component {
             this.setState({
                 errorMessage: "All fields must be filled"
             });
+            
+            //Display error Message Div
+           this.error();
 
         } else if (this.state.password !== this.state.password2) {
             this.setState({
                 errorMessage: "Password does not matched"
             });
+
+           //Display error Message Div
+           this.error();
+
         } else {
 
             Swal.fire({
@@ -54,7 +65,10 @@ class Register extends Component {
                 text: 'Registered Successfully ',
             });
 
+            document.getElementById('errorMsgDiv').style.display = "none";
+
             this.clear();
+
         }
     }
 
@@ -65,9 +79,9 @@ class Register extends Component {
                     <h2>REGISTER</h2>
                     <br />
 
-                    <div>
+                    <div className="Error-Message" id="errorMsgDiv">
                         {this.state.errorMessage}
-                    </div>
+                    </div> 
 
                     <form onSubmit={this.doSubmit}>
 

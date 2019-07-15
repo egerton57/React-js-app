@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import Home from "./components/home";
 import Login from "./components/login";
 import Register from "./components/register";
-import NoMatch from './components/noMatch'
+import NoMatch from './components/noMatch';
+import AddCity from './components/addCity';
 
 class RouterCompenent extends Component {
   state = {};
@@ -14,6 +15,7 @@ class RouterCompenent extends Component {
         <Route exact path="/home" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/add" component={AddCity} />
         <Route component={NoMatch}/>
       </Switch>
     );

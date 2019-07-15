@@ -50,7 +50,7 @@ class Navigation extends Component {
                   <p
                     style={{ fontSize: 17, fontWeight: "bold", marginTop: 15 }}
                   >
-                    mnimshadm@gmail.com
+                    -- U S E R N A M E --
                   </p>
                   <p style={{ marginTop: -20 }}>Free plane</p>
                 </div>
@@ -68,7 +68,7 @@ class Navigation extends Component {
           <NavLink activeClassName="ActiveNav" to="/home" align="center">
             Home
           </NavLink>
-          <NavLink activeClassName="ActiveNav" to="#" align="center">
+          <NavLink activeClassName="ActiveNav" to="/add" align="center">
             Add City
           </NavLink>
           <button
@@ -82,24 +82,23 @@ class Navigation extends Component {
         <div className="Top-Navigation-Bar">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-4">
+              <div className="col-4" align="left">
                 <button
                   className="btn btn-default Toggle"
                   onClick={this.openNav}
                 >
                   <span>&#9776;</span>
                 </button>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
                 <img
-                  src="Logo/Logo-Black.png"
-                  width="auto"
-                  height="40"
-                  className="d-inline-block align-top"
+                  src="Logo/Icon.png"
+                  width="35px" height="35px"
+                  className="d-inline-block align-top img-responsive"
                   alt=""
-                />
+                /> &nbsp;<span>N57 Weather</span>
               </div>
               <div className="col-4" align="center" style={{paddingTop:'5px'}}>
-                <p style={{fontSize:'18px', fontWeight:'bold'}}>TODAY</p>
+                <p style={{fontSize:'16px', fontWeight:'bold'}}>TODAY</p>
               </div>
 
               <div className="col-4" align="right" style={{paddingTop:'5px'}}>

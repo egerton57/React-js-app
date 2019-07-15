@@ -1,9 +1,9 @@
-.Top-Navigation-Bar{
+.Top-Navigation-Bar {
   background-color: rgb(255, 255, 255);
   height: 20%;
   width: 100%;
   position: relative;
-  padding:10px;
+  padding: 10px;
   top: 0;
   left: 0;
 }
@@ -39,7 +39,7 @@
 }
 
 .sidenav a {
- /* padding: 8px 0px 8px 12px;*/
+  /* padding: 8px 0px 8px 12px;*/
   padding-top: 8px;
   padding-bottom: 8px;
   text-decoration: none;
@@ -49,44 +49,53 @@
   transition: 0.3s;
 }
 
-.sidenav .ActiveNav{
+.sidenav .ActiveNav {
   color: rgb(0, 217, 255);
 }
 
 .sidenav a:hover {
   color: #f1f1f1;
-  background: #B2FEFA;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #b2fefa; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0ed2f7,
+    #b2fefa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0ed2f7,
+    #b2fefa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.Side-Nav-Footer {
+  margin-top: 60%;
+}
 .closebtn {
   position: absolute;
-  background-color:transparent; 
+  background-color: transparent;
   top: -15px;
   right: 10px;
   font-size: 36px;
   margin-left: 50px;
 }
 
-.closebtn:hover{
-  color:white; 
+.closebtn:hover {
+  color: white;
 }
 
-.LogoutBtn{
+.LogoutBtn {
   margin-top: 8px;
   font-size: 20px;
 }
 
-.Toggle{
+.Toggle {
   background-color: transparent;
 }
 
 .Toggle:hover {
-  color:white;
+  color: white;
   background-color: #2e2e2e;
-
 }
 #main {
   transition: margin-left 0.5s;
@@ -101,5 +110,3 @@
     font-size: 18px;
   }
 }
-
-

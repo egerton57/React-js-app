@@ -7,6 +7,7 @@ class Navigation extends Component {
   constructor() {
     super();
     this.state = {};
+    var year = new Date().getFullYear();
   }
 
   // Sign out Function
@@ -77,6 +78,7 @@ class Navigation extends Component {
           >
             Logout
           </button>
+          <p className="Side-Nav-Footer" align="center">Copyright © {this.year} N57 Weather</p>
         </div>
 
         <div className="Top-Navigation-Bar">

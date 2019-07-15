@@ -1,0 +1,47 @@
+.Home-Component {
+  background: #b2fefa; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0ed2f7,
+    #b2fefa
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0ed2f7,
+    #b2fefa
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: absolute;
+  margin-top:-4.5%;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  z-index: -1;
+}
+
+#Rounded {
+  border-radius: 25px;
+  color: rgb(80, 80, 80);
+  background: rgb(255, 255, 255);
+
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin-top: 45%;
+
+  -webkit-box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
+}
+
+.City-BG {
+  width: 100%;
+  padding-top: 20px;
+ 
+}
+
+.Add-City {
+  width: 150px;
+  height: auto;
+
+
+}

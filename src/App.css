@@ -3,24 +3,23 @@
 }
 
 .Login-BG {
+  background-color: rgb(245, 245, 245, 0.5);
 
-    background-color: rgb(245, 245, 245, 0.5);
-  
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 .Main-Logo {
-    position: absolute;
-    z-index: +1;
-    margin-top: -40%;
-    margin-bottom: 0%;
-    margin-left: -25%;
-    margin-right: 50%;
-    width: 50%;
-    height: auto;
+  position: absolute;
+  z-index: +1;
+  margin-top: -40%;
+  margin-bottom: 0%;
+  margin-left: -25%;
+  margin-right: 50%;
+  width: 50%;
+  height: auto;
 }
 
 .User-Avatar {
@@ -29,7 +28,7 @@
 }
 
 .App-header {
-  background-image: url('bg/background.jpg');
+  background-image: url("bg/background.jpg");
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -46,23 +45,22 @@
 
 .custom-input {
   background-color: rgba(0, 0, 0, 0);
-  border:none;
+  border: none;
 }
 
-.Register{
+.Register {
   font-size: 15px;
   padding: 8px;
   margin-top: 45px;
-  background-color: rgb(119, 136, 153, 0.2)
+  background-color: rgb(119, 136, 153, 0.2);
 }
 
-.Weather-Slide{
+.Weather-Slide {
   width: 100%;
   height: auto;
 }
 
 .Error-Message {
-  display: none;
   font-size: 14px;
   padding: 5px;
   margin-bottom: 5px;

@@ -1,145 +1,145 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert2';
-import '../App.css';
+import FireBs from "../config/fire";
+import Firebase from 'firebase';
+import Slideshow from "./Weather-img";
+//import Swal from 'sweetalert2';
 
 class Register extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            fullName: '',
-            email: '',
-            password: '',
-            password2: '',
-            errorMessage: '',
-        }
+  constructor(props) {
+    super(props);
 
-    }
+  //  Firebase.initializeApp(FireBs.firebase);
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
+    this.state = {
+  //    fullName: [],
+      email: "",
+      password: "",
+      password2: "",
+      errorMessage: ""
+    };
+
+  }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  clear = () => {
+    this.setState({
+      users:[],
+      fullName: "",
+      email: "",
+      password: "",
+      password2: "",
+      fireBsErrors: ""
+    });
+  };
+
+  doSubmit = e => {
+    e.preventDefault();
+
+    const { email, password, password2 } = this.state;
+
+    if (password === password2) {
+      FireBs.auth()
+        .createUserWithEmailAndPassword(email, password)
+        .catch(error => {
+          this.setState({ fireBsErrors: error.message });
         });
+    } else {
+      this.setState({ fireBsErrors: "Password does not matched" });
     }
+  };
 
-    clear = () => {
-        this.setState({
-            fullName: '',
-            email: '',
-            password: '',
-            password2: '',
-            errorMessage: '',
-        })
-    }
+  render() {
+    //Error Notification
+    let errorNotification = this.state.fireBsErrors ? (
+      <div className="Error-Message">{this.state.fireBsErrors}</div>
+    ) : null;
 
-    error = () => {
-        document.getElementById('errorMsgDiv').style.display = "block"
-    }
-
-    doSubmit = (e) => {
-        e.preventDefault();
-
-
-        //Form Validation
-        if (this.state.fullName === '' || this.state.email === '' || this.state.password === '') {
-            this.setState({
-                errorMessage: "All fields must be filled"
-            });
-            
-            //Display error Message Div
-           this.error();
-
-        } else if (this.state.password !== this.state.password2) {
-            this.setState({
-                errorMessage: "Password does not matched"
-            });
-
-           //Display error Message Div
-           this.error();
-
-        } else {
-
-            Swal.fire({
-                type: 'success',
-                title: 'Welcome ' + (this.state.fullName),
-                text: 'Registered Successfully ',
-            });
-
-            document.getElementById('errorMsgDiv').style.display = "none";
-
-            this.clear();
-
-        }
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <div>
-                    <h2>REGISTER</h2>
-                    <br />
-
-                    <div className="Error-Message" id="errorMsgDiv">
-                        {this.state.errorMessage}
-                    </div> 
-
-                    <form onSubmit={this.doSubmit}>
-
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="fullname"
-                                name="fullName"
-                                placeholder="Fullname"
-                                onChange={this.handleChange}
-                                value={this.state.fullName} />
-                        </div>
-
-                        <div className="form-group">
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="email"
-                                name="email"
-                                placeholder="E-Mail"
-                                onChange={this.handleChange}
-                                value={this.state.email} />
-                        </div>
-
-                        <div className="form-group">
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="password"
-                                name="password"
-                                placeholder="Password"
-                                onChange={this.handleChange}
-                                value={this.state.password} />
-                        </div>
-
-                        <div className="form-group">
-                            <input
-                                type="password"
-                                className="form-control"
-                                id="password2"
-                                name="password2"
-                                placeholder="Confirm Password"
-                                onChange={this.handleChange}
-                                value={this.state.password2} />
-                        </div>
-
-                        <button className="btn btn-primary">Sign up</button>
-
-                    </form>
-
-                    <p className="Register">If you already registered, hit&nbsp;
-                        <Link to="/">Sign in</Link>
-                    </p>
+    return (
+      <React.Fragment>
+        <div className="App">
+          <header className="App-header">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-8">
+                  <Slideshow />
                 </div>
-            </React.Fragment>
-        );
-    }
+                <div className="col-md-4 Login-BG">
+                  <h2>REGISTER</h2>
+                  <br />
+
+                  {errorNotification}
+
+                  <form onSubmit={this.doSubmit}>
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="fullname"
+                        ref="fullName"
+                        name="fullName"
+                        placeholder="Fullname"
+                        onChange={this.handleChange}
+                        value={this.state.fullName}
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="E-Mail"
+                        onChange={this.handleChange}
+                        value={this.state.email}
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        onChange={this.handleChange}
+                        value={this.state.password}
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="password2"
+                        name="password2"
+                        placeholder="Confirm Password"
+                        onChange={this.handleChange}
+                        value={this.state.password2}
+                      />
+                    </div>
+
+                    <button className="btn btn-primary">Sign up</button>
+                  </form>
+
+                  <p className="Register">
+                    If you already registered, hit&nbsp;
+                    <Link to="/login">Sign in</Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 export default Register;

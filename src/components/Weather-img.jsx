@@ -16,7 +16,7 @@ const fadeProperties = {
   indicators: false,
   arrows: false,
   onChange: (oldIndex, newIndex) => {
-    console.log(`fade transition from ${oldIndex} to ${newIndex}`);
+
   }
 }
  //<img src="N57-Weather.png" alt="" width="50%" height="auto" />

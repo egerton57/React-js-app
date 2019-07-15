@@ -1,0 +1,105 @@
+.Top-Navigation-Bar{
+  background-color: rgb(255, 255, 255);
+  height: 60px;
+  width: 100%;
+  position: relative;
+  padding:10px;
+  top: 0;
+  left: 0;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 3px 8px 2px #ccc;
+  overflow-x: hidden;
+  transition: 0.1s;
+  padding-top: 60px;
+}
+
+.User-Div {
+  color: white;
+  background-image: linear-gradient(
+    to left,
+    #8bb9ff,
+    #4dd1ff,
+    #0fe5fc,
+    #54f5df,
+    #9dffbb
+  );
+  box-shadow: 0 4px 20px -8px rgba(78, 78, 87, 0.6);
+  margin-top: -18%;
+  height: 150px;
+  width: auto;
+}
+
+.sidenav a {
+ /* padding: 8px 0px 8px 12px;*/
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #2e2e2e;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav .ActiveNav{
+  color: rgb(0, 217, 255);
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+  background: #B2FEFA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+.closebtn {
+  position: absolute;
+  background-color:transparent; 
+  top: -15px;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.closebtn:hover{
+  color:white; 
+}
+
+.LogoutBtn{
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.Toggle{
+  background-color: transparent;
+}
+
+.Toggle:hover {
+  color:white;
+  background-color: #2e2e2e;
+
+}
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+

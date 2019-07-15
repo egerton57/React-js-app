@@ -1,46 +1,63 @@
-import React from 'react';
-import FireBs from '../config/firebase';
+import React, { Component } from "react";
+
+//Firebase Config
+import FireBs from "../config/fire";
+
+//React Router
+import { withRouter } from "react-router-dom";
+
+//Components
+import LoginComponent from './loginRegister';
+import RouterCompenent from "./../router";
+
+//CSS
 import '../App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Register from './register';
-import Login from './login';
-import Slideshow from './Weather-img';
-import Home from './home';
-
-function App() {
-  return (
-    <React.Fragment>
-      <Router>
-        <div className="App">
-
-          <header className="App-header">
-
-            <div className="container">
-
-              <div className="row">
-
-                <div className="col-md-8">
-                  <Slideshow />
-                </div>
-
-                <div className="col-md-4 Login-BG">
-
-                  <Route exact path="/" component={Login} />
-
-                  <Route path="/register" component={Register} />
-
-                </div>
-
-              </div>
-
-            </div>
-          </header>
-        </div>
+import "../CSS/Navigation-Light.css";
+import '../CSS/Light-Mode.css';
 
 
-      </Router>
-    </React.Fragment>
-  );
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null
+    };
+    this.authListener();
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem("isLogged") == "true") {
+      let path =
+        this.props.location.pathname !== "/login"
+          ? this.props.location.pathname
+          : "/";
+      return this.props.history.push(path);
+    }
+
+    return this.props.history.push("/login");
+
+  }
+
+  authListener() {
+    FireBs.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <RouterCompenent>
+          <LoginComponent />
+        </RouterCompenent>
+      </React.Fragment>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);

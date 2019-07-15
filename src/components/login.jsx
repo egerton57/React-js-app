@@ -1,102 +1,113 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Swal from 'sweetalert2';
-import '../App.css';
+import FireBs from "../config/fire";
+import Slideshow from "./Weather-img";
+//import Swal from 'sweetalert2';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
 
-    constructor() {
+    this.state = {
+      email: "",
+      password: "",
+      fireBsErrors: ""
+    };
+  }
 
-        super();
+  handleChange = e => {
+    //Prevent Default behavior of the Button
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
-        this.state = {
+  doSubmit = e => {
+    e.preventDefault();
 
-            email: '',
-            password: ''
+    const { email, password } = this.state;
 
-        };
-    }
+    FireBs.auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(resp => {
+        localStorage.setItem("isLogged", true);
+        console.log(resp);
 
-    handleChange = (e) => {
-        //Prevent Default behavior of Button
-        e.preventDefault();
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    }
+        return this.props.history.push("/home");
+      })
+      .catch(error => {
+        this.setState({ fireBsErrors: error.message });
+      });
+  };
 
-    doSubmit = (e) => {
+  render() {
+    //Error Notification
+    let errorNotification = this.state.fireBsErrors ? (
+      <div className="Error-Message">{this.state.fireBsErrors}</div>
+    ) : null;
 
-        //Login validation
-        if (this.state.email === "abc@gmail.com" && this.state.password === "123") {
-            e.preventDefault();
-
-            Swal.fire({
-                type: 'success',
-                title: 'Welcome',
-                text: 'Login success',
-            });
-
-        } else {
-            e.preventDefault();
-
-            Swal.fire({
-                type: 'error',
-                title: 'User not found',
-                text: 'Please register',
-            });
-
-        }
-
-    }
-
-
-
-    render() {
-        return (
-            <React.Fragment>
-                <div>
-
-                    <h2> LOGIN </h2>
-
-                    <img src="user.png" className="User-Avatar img-fluid" alt="User" />
-
-                    <form onSubmit={this.doSubmit}>
-
-                        <div className="form-group">
-                            <input
-                                type="email"
-                                className="form-control Custom-input"
-                                name="email"
-                                id="email"
-                                placeholder="E-Mail"
-                                value={this.state.email}
-                                onChange={this.handleChange} />
-                        </div>
-
-                        <div className="form-group">
-                            <input
-                                type="password"
-                                className="form-control"
-                                name="password"
-                                id="password"
-                                placeholder="Password"
-                                value={this.state.password}
-                                onChange={this.handleChange} />
-                        </div>
-
-                        <button className="btn btn-primary">Login</button>
-
-                    </form>
-
-                    <p className="Register">Don't have an account ? &nbsp;
-                        <Link to="/register">Register</Link>
-                    </p>
-
+    return (
+      <React.Fragment>
+        <div className="App">
+          <header className="App-header">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-8">
+                  <Slideshow />
                 </div>
-            </React.Fragment>
-        );
-    }
+
+                <div className="col-md-4 Login-BG">
+                  <h2> LOGIN </h2>
+
+                  <img
+                    src="user.png"
+                    className="User-Avatar img-fluid"
+                    alt="User"
+                  />
+
+                  {errorNotification}
+
+                  <form onSubmit={this.doSubmit}>
+                    <div className="form-group">
+                      <input
+                        type="email"
+                        className="form-control Custom-input"
+                        name="email"
+                        id="email"
+                        placeholder="E-Mail"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <input
+                        type="password"
+                        className="form-control"
+                        name="password"
+                        id="password"
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={this.handleChange}
+                      />
+                    </div>
+
+                    <button className="btn btn-primary">Login</button>
+                  </form>
+
+                  <p className="Register">
+                    Don't have an account ? &nbsp;
+                    <Link to="/register">Register</Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 export default Login;

@@ -36,7 +36,7 @@ class Navigation extends Component {
 
             <div className="container-fluid">
               <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-2" align="center">
                   <img
                     src="user.png"
                     classname="img-fluid"
@@ -46,7 +46,7 @@ class Navigation extends Component {
                   />
                 </div>
 
-                <div className="col-md-9">
+                <div className="col-md-10" align="center">
                   <p
                     style={{ fontSize: 17, fontWeight: "bold", marginTop: 15 }}
                   >
@@ -82,13 +82,16 @@ class Navigation extends Component {
         <div className="Top-Navigation-Bar">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-4" align="left">
-                <button
+              <div className="col-md-" align="left">
+              <button
                   className="btn btn-default Toggle"
                   onClick={this.openNav}
                 >
                   <span>&#9776;</span>
                 </button>
+              </div>
+
+              <div className="col-md-2" align="center" style={{paddingTop:'5px'}}>
                 &nbsp;&nbsp;
                 <img
                   src="Logo/Icon.png"
@@ -97,11 +100,11 @@ class Navigation extends Component {
                   alt=""
                 /> &nbsp;<span>N57 Weather</span>
               </div>
-              <div className="col-4" align="center" style={{paddingTop:'5px'}}>
+              <div className="col-md-7" align="center" style={{paddingTop:'5px'}}>
                 <p style={{fontSize:'16px', fontWeight:'bold'}}>TODAY</p>
               </div>
 
-              <div className="col-4" align="right" style={{paddingTop:'5px'}}>
+              <div className="col-md-2" align="center" style={{paddingTop:'5px'}}>
                 <form>
                   <div class="custom-control custom-switch">
                     <input

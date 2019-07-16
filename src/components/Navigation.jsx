@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { NavLink, withRouter } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
+//import Navbar from "react-bootstrap/Navbar";
 import FireBs from "../config/fire";
 
 class Navigation extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      changeMode: true,
+    };
     var year = new Date().getFullYear();
   }
 
@@ -27,27 +29,49 @@ class Navigation extends Component {
     document.getElementById("mySidenav").style.width = "0";
   };
 
+  switchItem = e => {
+    let Mode = e.target.value;
+
+    //Change Mode
+    if (this.state.changeMode === false) {
+      this.setState({
+        changeMode: true
+      });
+
+      localStorage.setItem("DarkMode", false);
+    } else {
+      this.setState({
+        changeMode: false
+      });
+      localStorage.setItem("DarkMode", true);
+    }
+
+
+    //Toggle Switch
+    if (localStorage.getItem("DarkMode" == "true")) {
+      document.getElementById("switch1").checked = true;
+    } else {
+      document.getElementById("switch1").checked = false;
+    }
+
+    //let checks = localStorage.setItem("Switch", true);
+    console.log(Mode);
+  };
   render() {
     return (
       <React.Fragment>
         <div id="mySidenav" className="sidenav">
           <div className="User-Div">
             <br />
-            <h5 align="center">W E L C O M E</h5>
+            <h5>W E L C O M E</h5>
 
             <div className="container-fluid">
               <div className="row">
-                <div className="col-md-2" align="center">
-                  <img
-                    src="user.png"
-                    classname="img-fluid"
-                    width="80px"
-                    height="auto"
-                    alt=""
-                  />
+                <div className="col-sm-2">
+                  <img src="user.png" width="100px" height="100px" alt="" />
                 </div>
 
-                <div className="col-md-10" align="center">
+                <div className="col-sm-10">
                   <p
                     style={{ fontSize: 17, fontWeight: "bold", marginTop: 15 }}
                   >
@@ -78,43 +102,52 @@ class Navigation extends Component {
           >
             Logout
           </button>
-          <p className="Side-Nav-Footer" align="center">Copyright © {this.year} N57 Weather</p>
+          <p className="Side-Nav-Footer" align="center">
+            Copyright © {this.year} N57 Weather
+          </p>
         </div>
 
-        <div className="Top-Navigation-Bar">
+        <div className="Top-Navigation-Bar fixed-top static-top">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-md-" align="left">
-              <button
+              <div className="col-md-3">
+                <button
+                  align="left"
                   className="btn btn-default Toggle"
                   onClick={this.openNav}
                 >
                   <span>&#9776;</span>
                 </button>
-              </div>
-
-              <div className="col-md-2" align="center" style={{paddingTop:'5px'}}>
-                &nbsp;&nbsp;
+                &emsp;&ensp;
                 <img
+                  align="center"
                   src="Logo/Icon.png"
-                  width="35px" height="35px"
-                  className="d-inline-block align-top img-responsive"
+                  width="35px"
+                  height="35px"
+                  className="d-inline-block align-top"
                   alt=""
-                /> &nbsp;<span>N57 Weather</span>
+                />{" "}
+                &nbsp;
+                <p align="center" style={{ marginTop: "-35px" }}>
+                  N57 Weather
+                </p>
               </div>
-              <div className="col-md-7" align="center" style={{paddingTop:'5px'}}>
-                <p style={{fontSize:'16px', fontWeight:'bold'}}>TODAY</p>
+              <div className="col-md-6" align="center">
+                <p style={{ fontSize: "16px", fontWeight: "bold" }}>TODAY</p>
               </div>
 
-              <div className="col-md-2" align="center" style={{paddingTop:'5px'}}>
+              <div className="col-md-3" align="center">
                 <form>
-                  <div class="custom-control custom-switch">
+                  <div className="custom-control custom-switch">
                     <input
+                      onChange={this.switchItem}
+                      value={this.state.changeMode}
                       type="checkbox"
-                      class="custom-control-input"
+                      className="custom-control-input Mode"
                       id="switch1"
+                      checked={undefined}
                     />
-                    <label class="custom-control-label" for="switch1">
+                    <label className="custom-control-label" htmlFor="switch1">
                       Dark Mode
                     </label>
                   </div>

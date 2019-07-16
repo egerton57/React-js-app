@@ -51,13 +51,13 @@ class Login extends Component {
       <React.Fragment>
         <div className="App">
           <header className="App-header">
-            <div className="container">
+            <div className="container-fluid Parent-Container">
               <div className="row">
-                <div className="col-md-8">
+                <div className="col-md-9 Slide-Container">
                   <Slideshow />
                 </div>
 
-                <div className="col-md-4 Login-BG">
+                <div className="col-md-3 Login-BG">
                   <h2> LOGIN </h2>
 
                   <img

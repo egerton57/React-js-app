@@ -1,18 +1,20 @@
 .Top-Navigation-Bar {
   background-color: rgb(255, 255, 255);
-  height: 20%;
+  height: auto;
   width: 100%;
   position: relative;
-  padding: 10px;
+  padding:1%;
   top: 0;
   left: 0;
+  box-shadow: 0px 0px 10px 0px rgb(110, 110, 110, 0.5);
+  z-index: 1;
 }
 
 .sidenav {
   height: 100%;
   width: 0px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   background-color: rgb(255, 255, 255);
@@ -24,6 +26,7 @@
 
 .User-Div {
   color: white;
+  text-align: center;
   background-image: linear-gradient(
     to left,
     #8bb9ff,
@@ -41,6 +44,7 @@
 
 .sidenav a {
   /* padding: 8px 0px 8px 12px;*/
+  text-align: center;
   padding-top: 8px;
   padding-bottom: 8px;
   text-decoration: none;

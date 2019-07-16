@@ -26,7 +26,7 @@ const Slideshow = () => {
     <Fade {...fadeProperties}>
 
       <div className="each-fade">
-        <div className="image-container" >
+        <div className="image-container">
           <img src={fadeImages[0]} alt="" className="Weather-Slide img-fluid"/>
         </div>
       </div>

@@ -1,0 +1,106 @@
+.Top-Navigation-Bar {
+    background-color: rgb(51, 51, 51);
+    color: rgb(214, 214, 214);
+    height: 20%;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    color:white;
+    background-color: rgb(107, 107, 107);
+    box-shadow: 0px 0px 18px 0px rgb(88, 88, 88);
+    overflow-x: hidden;
+    transition: 0.1s;
+    padding-top: 60px;
+  }
+  
+  .User-Div {
+    color: white;
+    background: #4776E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    box-shadow: 0 4px 20px -8px rgba(78, 78, 87, 0.6);
+    margin-top: -20%;
+    padding-bottom: 10%;
+    height: auto;
+    width: 100%;
+  }
+  
+  .sidenav a {
+    /* padding: 8px 0px 8px 12px;*/
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav .ActiveNav {
+    color: rgb(0, 217, 255);
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+    background: #00d2ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
+  
+  .Side-Nav-Footer {
+    margin-top: 60%;
+  }
+  .closebtn {
+    position: absolute;
+    background-color: transparent;
+    top: -15px;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .closebtn:hover {
+    color: white;
+  }
+  
+  .LogoutBtn {
+    margin-top: 8px;
+    font-size: 20px;
+  }
+  
+  .Toggle {
+    color: white;
+    background-color: transparent;
+  }
+  
+  .Toggle:hover {
+    color: rgb(133, 133, 133);
+    background-color: #464646;
+  }
+  #main {
+    transition: margin-left 0.5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+  

@@ -1,33 +1,24 @@
 .Home-Component {
-  background: #b2fefa; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #0ed2f7,
-    #b2fefa
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #0ed2f7,
-    #b2fefa
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  position: absolute;
-  margin-top:-4.8%;
+  background: #b2fefa;
+  background: -webkit-linear-gradient(to right, #0ed2f7, #b2fefa);
+  background: linear-gradient(to right, #0ed2f7, #b2fefa);
   width: 100%;
   height: 100%;
+  padding-top: 150px;
   overflow-y: auto;
-  z-index: -1;
+  position: fixed;
 }
 
 #Rounded {
-  border-radius: 25px;
+  border-radius: 20px;
   color: rgb(80, 80, 80);
   background: rgb(255, 255, 255);
 
   width: 100%;
   height: auto;
+  margin-top: -10%;
+
   padding: 20px;
-  margin-top: 45%;
 
   -webkit-box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
   box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
@@ -36,10 +27,71 @@
 .City-BG {
   width: 100%;
   padding-top: 20px;
- 
 }
 
 .Add-City {
-  width: 150px;
+  width: 100px;
   height: auto;
+}
+
+.Add-City:hover {
+  transform: scale(1.2);
+}
+
+.Add-City-Container {
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+
+  text-align: center;
+
+  -webkit-box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
+}
+
+.Search-Bar {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: rgb(255, 255, 255);
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 0;
+  outline: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 75%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #ffffff;
+  color: #5c5c5c;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 18px 0px rgba(95, 95, 95, 0.2);
+  margin-bottom: 30px;
+}
+
+.Search-Button {
+  background-color: rgb(128, 255, 159);
+  color:white;
+  margin-left: -35px;
+  width:60px;
+  height: 60px;
+  border-radius: 100%;
+  z-index:1;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 18px 0px rgba(95, 95, 95, 0.2);
+}
+.Search-Button:hover{
+  background-color: rgb(0, 255, 170);
+}
+
+.Search-Icon {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

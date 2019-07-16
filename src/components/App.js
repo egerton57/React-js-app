@@ -15,7 +15,8 @@ import '../App.css';
 import "../CSS/Navigation-Light.css";
 import '../CSS/Light-Mode.css';
 
-
+//import "../CSS/Navigation-Dark.css";
+//import '../CSS/Dark-Mode.css';
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (localStorage.getItem("isLogged") == "true") {
+    if (localStorage.getItem("isLogged") === "true") {
       let path =
         this.props.location.pathname !== "/login"
           ? this.props.location.pathname

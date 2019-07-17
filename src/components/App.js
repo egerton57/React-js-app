@@ -7,16 +7,17 @@ import FireBs from "../config/fire";
 import { withRouter } from "react-router-dom";
 
 //Components
-import LoginComponent from './loginRegister';
+import LoginComponent from "./loginRegister";
 import RouterCompenent from "./../router";
 
 //CSS
-import '../App.css';
-import "../CSS/Navigation-Light.css";
-import '../CSS/Light-Mode.css';
+import "../App.css";
 
-//import "../CSS/Navigation-Dark.css";
-//import '../CSS/Dark-Mode.css';
+import "../CSS/Navigation-Dark.css";
+import '../CSS/Dark-Mode.css';
+
+import "../CSS/Navigation-Light.css";
+import "../CSS/Light-Mode.css";
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +38,6 @@ class App extends Component {
     }
 
     return this.props.history.push("/login");
-
   }
 
   authListener() {

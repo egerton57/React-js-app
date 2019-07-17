@@ -11,6 +11,7 @@ class AddCity extends Component {
     city: "",
     country: "",
     humidity: "",
+    main: "",
     description: "",
     error: ""
   };
@@ -26,27 +27,27 @@ class AddCity extends Component {
     const data = await api_call.json();
 
     if (city && country) {
-
       this.setState({
         temperature: data.main.temp,
         city: data.name,
         country: data.sys.country,
         humidity: data.main.humidity,
+        main: data.weather[0].main,
         description: data.weather[0].description,
         error: ""
       });
-
-    } else {
+    } 
+    else {
       this.setState({
-      temperature:undefined,
-      city: undefined,
-      country: undefined,
-      humidity: undefined,
-      description: undefined,
-      error: "Please select the Location"      
-    });
+        temperature: undefined,
+        city: undefined,
+        country: undefined,
+        humidity: undefined,
+        main: undefined,
+        description: undefined,
+        error: "Please select the Location"
+      });
     }
-
   };
 
   render() {
@@ -55,6 +56,7 @@ class AddCity extends Component {
       city,
       country,
       humidity,
+      main,
       description,
       error
     } = this.state;
@@ -65,20 +67,28 @@ class AddCity extends Component {
           <div className="row">
             <div className="container Add-City-Container">
               <div className="row">
-                <div className="col-md-6">
-                  <h3>SEARCH CITIES</h3>
-                  <Form getWeather={this.getWeather} />
-                  <Weather
-                    temperature={temperature}
-                    city={city}
-                    country={country}
-                    humidity={humidity}
-                    description={description}
-                    error={error}
-                  />
-                </div>
-                <div className="col-md-6">
-                  <h3>CITY OF THE MONTH</h3>
+                <div className="col-md-12">
+                  <h3>SELECT LOCATION</h3>
+                  <br/>
+                  <div className="row">
+                  <div align="center" className="col-md-6">
+                    <Form getWeather={this.getWeather} />
+                  </div> 
+                  <br/>
+                  <div align="center" className="col-md-6">
+                    {" "}
+                    <Weather
+                      temperature={temperature}
+                      city={city}
+                      country={country}
+                      humidity={humidity}
+                      main={main}
+                      description={description}
+                      error={error}
+                    />
+                    <br/>
+                  </div>
+                  </div>
                 </div>
               </div>
             </div>

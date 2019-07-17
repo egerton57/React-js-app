@@ -1,24 +1,42 @@
 import React, { Component } from "react";
+import {
+  CountryDropdown,
+  RegionDropdown,
+  CountryRegionData
+} from "react-country-region-selector";
 
 class Form extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = { country: "" };
+  }
+
+  selectCountry(val) {
+    this.setState({ country: val });
+  }
+
   render() {
+    const { country } = this.state;
     return (
       <React.Fragment>
         <form onSubmit={this.props.getWeather}>
-            <input type="text" name="city" placeholder="City..."/>
-            <input type="text" name="country" placeholder="Country..."/>
-            <button>Get Weather</button>
-          {/*       <input
+          <CountryDropdown
+            value={country}
+            className="Search-Bar"
+            name="country"
+            onChange={val => this.selectCountry(val)}
+          />
+
+          <input
             type="text"
-            name="search"
-            id="search"
-            placeholder="Search City"
+            name="city"
+            placeholder="City..."
             className="Search-Bar"
           />
+
           <button type="submit" className="btn btn-default Search-Button">
             <i className="fa fa-search" />
-</button>*/}
+          </button>
         </form>
       </React.Fragment>
     );

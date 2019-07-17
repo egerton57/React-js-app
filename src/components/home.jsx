@@ -3,12 +3,26 @@ import { Link } from "react-router-dom";
 //import FireBs from "../config/fire";
 import Navigation from "./Navigation";
 
-class Home extends Component {
-  constructor() {
-    super();
+const API_KEY = "ed225f655bfa99f9c3c5e7bce2d248a3";
 
-    this.state = {};
-  }
+class Home extends Component {
+
+  state = {
+    temperature: "",
+    city: "",
+    country: "",
+    humidity: "",
+    main: "",
+    description: "",
+    error: ""
+  };
+
+  // var getUserCity = localStorage.getItem("UserCity");
+  // var UserCityDatas = JSON.parse(getUserCity);
+
+  // var getUid = UserCityDatas[0];
+  // var getCity = UserCityDatas[1];
+  // var getCountry = UserCityDatas[2];
 
   render() {
     return (
@@ -16,7 +30,9 @@ class Home extends Component {
         <Navigation />
         <div className="container-fluid Home-Component">
           <div className="row">
-            <div className="col-md-4">&nbsp;</div>
+            <div className="col-md-4">
+              {' '}
+            </div>
             <div className="col-md-4">
               <div id="Rounded" align="center">
                 <h4 align="center">ADD CITY</h4>

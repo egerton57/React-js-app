@@ -1,37 +1,109 @@
-.Home-Component {
-    background: #485563;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    position: absolute;
-    margin-top:-4.8%;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    z-index: -1;
-  }
+.Dark-Home-Component {
+  background: #485563;  
+  background: -webkit-linear-gradient(to right, #29323c, #485563);  
+  background: linear-gradient(to right, #29323c, #485563); 
+  width: 100%;
+  height: 100%;
+  padding-top: 150px;
+  overflow-y: auto;
+  position: fixed;
+}
+
+#Dark-Rounded {
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  background: rgb(146, 146, 146);
+
+  width: 100%;
+  height: auto;
+  margin-top: -10%;
+
+  padding: 20px;
+
+  -webkit-box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
+}
+
+.Dark-City-BG {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.Dark-Add-City {
+  width: 100px;
+  height: auto;
+}
+
+.Dark-Add-City:hover {
+  transform: scale(1.2);
+}
+
+.Dark-Add-City-Container {
+  color: rgb(255, 255, 255);
+  background: rgb(146, 146, 146);
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+
+  text-align: center;
+
+  -webkit-box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
+}
+
+.Dark-Search-Bar {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: rgb(255, 255, 255);
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 0;
+  outline: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 75%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #ffffff;
+  color: #5c5c5c;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 18px 0px rgba(95, 95, 95, 0.2);
+  margin-bottom: 30px;
+}
+
+.Dark-Search-Button {
+  background-color: rgb(128, 255, 159);
+  color:white;
+  margin-left: -35px;
+  width:60px;
+  height: 60px;
+  border-radius: 100%;
+  z-index:1;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 18px 0px rgba(95, 95, 95, 0.2);
+}
+.Dark-Search-Button:hover{
+  background-color: rgb(0, 255, 170);
+}
+
+.Dark-Weather-Card {
+  border-radius: 20px;
+  color: rgb(65, 65, 65);
+  background: #B2FEFA;
+  background: -webkit-linear-gradient(to top, #0ED2F7, #B2FEFA);
+  background: linear-gradient(to top, rgb(57, 189, 250), rgb(185, 255, 251));
   
-  #Rounded {
-    border-radius: 25px;
-    color: rgb(255, 255, 255);
-    background: rgb(146, 146, 146);
-  
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    margin-top: 45%;
-  
-    -webkit-box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
-    box-shadow: 1px 2px 21px -3px rgba(0, 0, 0, 0.26);
-  }
-  
-  .City-BG {
-    width: 100%;
-    padding-top: 20px;
-   
-  }
-  
-  .Add-City {
-    width: 150px;
-    height: auto;
-  }
+
+  width: 60%;
+  height: auto;
+
+  padding: 20px;
+
+  -webkit-box-shadow: 1px 0px 10px -3px rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 0px 10px -3px rgba(42, 41, 49, 0.5);
+}
+

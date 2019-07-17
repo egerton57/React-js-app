@@ -2,15 +2,27 @@ import React, { Component } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 //import Navbar from "react-bootstrap/Navbar";
 import FireBs from "../config/fire";
+import firebase from "firebase";
 
 class Navigation extends Component {
   constructor() {
     super();
     this.state = {
-      changeMode: true,
+      isDarkModeOn: false,
     };
-    var year = new Date().getFullYear();
   }
+
+    //Current User
+    getCurrenUser = () => {
+      var user = firebase.auth().currentUser;
+      var email;
+      
+      if (user != null) {
+        email = user.email;
+
+        return email;
+      }
+    }
 
   // Sign out Function
   logout = () => {
@@ -33,35 +45,38 @@ class Navigation extends Component {
     let Mode = e.target.value;
 
     //Change Mode
-    if (this.state.changeMode === false) {
-      this.setState({
-        changeMode: true
-      });
+    // if (this.state.changeMode === false) {
+    //   this.setState({
+    //     changeMode: true
+    //   });
 
-      localStorage.setItem("DarkMode", false);
-    } else {
-      this.setState({
-        changeMode: false
-      });
-      localStorage.setItem("DarkMode", true);
-    }
-
+    //   localStorage.setItem("DarkMode", "false");
+    // } else {
+    //   this.setState({
+    //     changeMode: false
+    //   });
+    //   localStorage.setItem("DarkMode", "true");
+    // }
 
     //Toggle Switch
-    if (localStorage.getItem("DarkMode" == "true")) {
-      document.getElementById("switch1").checked = true;
-    } else {
-      document.getElementById("switch1").checked = false;
-    }
-
-    //let checks = localStorage.setItem("Switch", true);
-    console.log(Mode);
+    // if (localStorage.getItem("DarkMode") === "true") {
+    //    this.setState({
+    //     isChecked: true
+    //    })
+    // } else {
+    //   this.setState({
+    //     isChecked: false
+    //    })
+    // }
   };
   render() {
+
+    const isOn = this.state.isDarkModeOn;
+
     return (
       <React.Fragment>
-        <div id="mySidenav" className="sidenav">
-          <div className="User-Div">
+        <div id="mySidenav" className={isOn ? "Dark-sidenav" : "sidenav"}>
+          <div className={isOn ? "Dark-User-Div" : "User-Div"}>
             <br />
             <h5>W E L C O M E</h5>
 
@@ -73,9 +88,9 @@ class Navigation extends Component {
 
                 <div className="col-sm-10">
                   <p
-                    style={{ fontSize: 17, fontWeight: "bold", marginTop: 15 }}
+                    style={{ fontSize: 15, fontWeight: "bold", marginTop: 20 }}
                   >
-                    -- U S E R N A M E --
+                    {this.getCurrenUser()}
                   </p>
                   <p style={{ marginTop: -20 }}>Free plane</p>
                 </div>
@@ -103,20 +118,20 @@ class Navigation extends Component {
             Logout
           </button>
           <p className="Side-Nav-Footer" align="center">
-            Copyright © {this.year} N57 Weather
+            Copyright © {new Date().getFullYear()} N57 Weather
           </p>
         </div>
 
-        <div className="Top-Navigation-Bar fixed-top static-top">
+        <div className={isOn ? "Dark-Top-Navigation-Bar fixed-top static-top" : "Top-Navigation-Bar fixed-top static-top"} >
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-3">
                 <button
                   align="left"
-                  className="btn btn-default Toggle"
+                  className={isOn ? "btn btn-default Dark-Toggle" : "btn btn-default Toggle"}
                   onClick={this.openNav}
                 >
-                  <span>&#9776;</span>
+                  <i className="fa fa-navicon" />
                 </button>
                 &emsp;&ensp;
                 <img
@@ -140,12 +155,10 @@ class Navigation extends Component {
                 <form>
                   <div className="custom-control custom-switch">
                     <input
-                      onChange={this.switchItem}
-                      value={this.state.changeMode}
+                      onClick={() => this.setState({isDarkModeOn: !isOn})}
                       type="checkbox"
                       className="custom-control-input Mode"
                       id="switch1"
-                      checked={undefined}
                     />
                     <label className="custom-control-label" htmlFor="switch1">
                       Dark Mode

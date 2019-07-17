@@ -69,13 +69,14 @@ class AddCity extends Component {
               <div className="row">
                 <div className="col-md-12">
                   <h3>SELECT LOCATION</h3>
-                  <br/>
+
                   <div className="row">
                   <div align="center" className="col-md-6">
                     <Form getWeather={this.getWeather} />
+
                   </div> 
-                  <br/>
-                  <div align="center" className="col-md-6">
+
+                  <div align="center" className="col-md-6" style={{padding:'1%'}}>
                     {" "}
                     <Weather
                       temperature={temperature}
@@ -86,7 +87,7 @@ class AddCity extends Component {
                       description={description}
                       error={error}
                     />
-                    <br/>
+
                   </div>
                   </div>
                 </div>

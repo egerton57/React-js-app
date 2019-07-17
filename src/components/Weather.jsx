@@ -24,17 +24,17 @@ class Weather extends Component {
 
 
 
-  addCity = () =>{
-    // e.preventDefault();
+  // addCity = () =>{
+  //   // e.preventDefault();
     
-    var user = firebase.auth().currentUser;
+  //   var user = firebase.auth().currentUser;
 
-     var userCity = [user.uid, this.props.city ,this.props.country];
-     JSON.stringify(userCity);
+  //    var userCity = [user.uid, this.props.city ,this.props.country];
+  //    JSON.stringify(userCity);
 
-     localStorage.setItem("UserCity", JSON.stringify(userCity));
-    // localStorage.setItem("UserCity",user.uid);
-  }
+  //    localStorage.setItem("UserCity", JSON.stringify(userCity));
+  //   // localStorage.setItem("UserCity",user.uid);
+  // }
 
 
   render() {
@@ -76,7 +76,7 @@ class Weather extends Component {
             <p style={{fontSize:'20px',fontWeight:'bolder'}}>{temperature}°</p>
             <p style={{textTransform:'capitalize'}}>{description}</p>
             <p>Humidity: {humidity}</p>
-            <button onClick={this.addCity} className="btn btn-success">Add City  <i className="fa fa-plus"/></button>
+            {/* <button onClick={this.addCity} className="btn btn-success">Add City  <i className="fa fa-plus"/></button> */}
           </div>
         )}
         {error && <p>{error}</p>}

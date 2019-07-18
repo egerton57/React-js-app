@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import FireBs from "../config/fire";
-import Firebase from 'firebase';
-import Slideshow from "./Weather-img";
 //import Swal from 'sweetalert2';
 
 class Register extends Component {
   constructor(props) {
     super(props);
 
-  //  Firebase.initializeApp(FireBs.firebase);
+    //  Firebase.initializeApp(FireBs.firebase);
 
     this.state = {
-  //    fullName: [],
+      //    fullName: [],
       email: "",
       password: "",
       password2: "",
       errorMessage: ""
     };
-
   }
 
   handleChange = e => {
@@ -29,7 +26,7 @@ class Register extends Component {
 
   clear = () => {
     this.setState({
-      users:[],
+      users: [],
       fullName: "",
       email: "",
       password: "",
@@ -64,13 +61,24 @@ class Register extends Component {
       <React.Fragment>
         <div className="App">
           <header className="App-header">
-            <div className="container-fluid Parent-Container">
+            <video autoPlay muted loop id="myVideo">
+              <source src="CloudsBG.mp4" type="video/mp4" />
+            </video>
+            <div className="container-fluid">
               <div className="row">
-                <div className="col-md-9 Slide-Container">
-                  <Slideshow />
-                </div>
-                <div className="col-md-3 Login-BG">
-                  <h2>REGISTER</h2>
+                <div className="col-md-4">{ '  '}</div>
+                <div className="col-md-4 Login-BG">
+                  <h4>
+                    <img
+                      src="N57-Weather-Logo.png"
+                      width="40px"
+                      height="auto"
+                      alt=""
+                    />{" "}
+                    N57 WEATHER
+                  </h4>
+                  <hr />
+                  <h4>Sign up</h4>
                   <br />
 
                   {errorNotification}
@@ -79,7 +87,7 @@ class Register extends Component {
                     <div className="form-group">
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control custom-input"
                         id="fullname"
                         ref="fullName"
                         name="fullName"
@@ -92,7 +100,7 @@ class Register extends Component {
                     <div className="form-group">
                       <input
                         type="email"
-                        className="form-control"
+                        className="form-control custom-input"
                         id="email"
                         name="email"
                         placeholder="E-Mail"
@@ -104,7 +112,7 @@ class Register extends Component {
                     <div className="form-group">
                       <input
                         type="password"
-                        className="form-control"
+                        className="form-control custom-input"
                         id="password"
                         name="password"
                         placeholder="Password"
@@ -116,7 +124,7 @@ class Register extends Component {
                     <div className="form-group">
                       <input
                         type="password"
-                        className="form-control"
+                        className="form-control custom-input"
                         id="password2"
                         name="password2"
                         placeholder="Confirm Password"
@@ -133,6 +141,7 @@ class Register extends Component {
                     <Link to="/login">Sign in</Link>
                   </p>
                 </div>
+                <div className="col-md-4"> </div>
               </div>
             </div>
           </header>

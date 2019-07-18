@@ -12,10 +12,7 @@
     "react-country-region-selector": "^1.4.3",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "react-slideshow-image": "^1.2.0",
-    "sweetalert-react": "^0.4.11",
-    "sweetalert2": "^8.13.3"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

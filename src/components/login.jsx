@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import FireBs from "../config/fire";
-import Slideshow from "./Weather-img";
-//import Swal from 'sweetalert2';
 
 class Login extends Component {
   constructor(props) {
@@ -51,14 +49,25 @@ class Login extends Component {
       <React.Fragment>
         <div className="App">
           <header className="App-header">
-            <div className="container-fluid Parent-Container">
+            <video autoPlay muted loop id="myVideo">
+              <source src="CloudsBG.mp4" type="video/mp4" />
+            </video>
+            <div className="container-fluid">
               <div className="row">
-                <div className="col-md-9 Slide-Container">
-                  <Slideshow />
-                </div>
+                <div className="col-md-4">{' '}</div>
 
-                <div className="col-md-3 Login-BG">
-                  <h2> LOGIN </h2>
+                <div className="col-md-4 Login-BG">
+                  <h4>
+                    <img
+                      src="N57-Weather-Logo.png"
+                      width="40px"
+                      height="auto"
+                      alt=""
+                    />{" "}
+                    N57 WEATHER
+                  </h4>
+                  <hr />
+                  <h4> Login </h4>
 
                   <img
                     src="user.png"
@@ -72,7 +81,7 @@ class Login extends Component {
                     <div className="form-group">
                       <input
                         type="email"
-                        className="form-control Custom-input"
+                        className="form-control custom-input"
                         name="email"
                         id="email"
                         placeholder="E-Mail"
@@ -84,7 +93,7 @@ class Login extends Component {
                     <div className="form-group">
                       <input
                         type="password"
-                        className="form-control"
+                        className="form-control custom-input"
                         name="password"
                         id="password"
                         placeholder="Password"
@@ -101,6 +110,7 @@ class Login extends Component {
                     <Link to="/register">Register</Link>
                   </p>
                 </div>
+                <div className="col-md-4" />
               </div>
             </div>
           </header>

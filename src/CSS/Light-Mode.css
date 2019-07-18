@@ -95,10 +95,10 @@
 
 .Weather-Card {
   border-radius: 20px;
-  color: rgb(65, 65, 65);
+  color: rgb(0, 0, 0);
   background: #B2FEFA;
-  background: -webkit-linear-gradient(to top, #0ED2F7, #B2FEFA);
-  background: linear-gradient(to top, rgb(57, 189, 250), rgb(185, 255, 251));
+  background: -webkit-linear-gradient(to top, rgb(106, 226, 250), #B2FEFA);
+  background: linear-gradient(to top, rgb(121, 210, 252), rgb(255, 206, 243));
   
 
   width: 60%;

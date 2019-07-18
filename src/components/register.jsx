@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import FireBs from "../config/fire";
+// import Firebase from "firebase";
 //import Swal from 'sweetalert2';
 
 class Register extends Component {
   constructor(props) {
     super(props);
 
-    //  Firebase.initializeApp(FireBs.firebase);
+    // Firebase.initializeApp(FireBs.firebase);
 
     this.state = {
       //    fullName: [],
@@ -43,6 +44,12 @@ class Register extends Component {
     if (password === password2) {
       FireBs.auth()
         .createUserWithEmailAndPassword(email, password)
+        .then(resp => {
+          localStorage.setItem("isLogged", true);
+          console.log(resp);
+
+          return this.props.history.push("/home");
+        })
         .catch(error => {
           this.setState({ fireBsErrors: error.message });
         });
@@ -66,7 +73,7 @@ class Register extends Component {
             </video>
             <div className="container-fluid">
               <div className="row">
-                <div className="col-md-4">{ '  '}</div>
+                <div className="col-md-4">{"  "}</div>
                 <div className="col-md-4 Login-BG">
                   <h4>
                     <img

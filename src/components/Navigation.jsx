@@ -1,16 +1,9 @@
 import React, { Component } from "react";
 import { NavLink, withRouter } from "react-router-dom";
-//import Navbar from "react-bootstrap/Navbar";
 import FireBs from "../config/fire";
 import firebase from "firebase";
 
 class Navigation extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isDarkModeOn: false,
-    };
-  }
 
     //Current User
     getCurrenUser = () => {
@@ -41,8 +34,8 @@ class Navigation extends Component {
     document.getElementById("mySidenav").style.width = "0";
   };
 
-  switchItem = e => {
-    let Mode = e.target.value;
+  // switchItem = e => {
+  //   let Mode = e.target.value;
 
     //Change Mode
     // if (this.state.changeMode === false) {
@@ -68,10 +61,10 @@ class Navigation extends Component {
     //     isChecked: false
     //    })
     // }
-  };
+  // };
   render() {
 
-    const isOn = this.state.isDarkModeOn;
+    const isOn = this.props.onSwitch;
 
     return (
       <React.Fragment>
@@ -155,7 +148,8 @@ class Navigation extends Component {
                 <form>
                   <div className="custom-control custom-switch">
                     <input
-                      onClick={() => this.setState({isDarkModeOn: !isOn})}
+                      // onClick={() => this.props({onSwitch: !isOn})}
+                      onClick={this.props.onToggleSwitch}
                       type="checkbox"
                       className="custom-control-input Mode"
                       id="switch1"

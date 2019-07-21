@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-//import FireBs from "../config/fire";
-import Navigation from "./Navigation";
 
 const API_KEY = "ed225f655bfa99f9c3c5e7bce2d248a3";
 
 class Home extends Component {
-
   state = {
     temperature: "",
     city: "",
@@ -25,16 +22,14 @@ class Home extends Component {
   // var getCountry = UserCityDatas[2];
 
   render() {
+    const isOn = this.props.onSwitch;
     return (
       <React.Fragment>
-        <Navigation />
-        <div className="container-fluid Home-Component">
+        <div className={isOn ? "container-fluid Dark-Home-Component" : "container-fluid Home-Component"}>
           <div className="row">
+            <div className="col-md-4"> </div>
             <div className="col-md-4">
-              {' '}
-            </div>
-            <div className="col-md-4">
-              <div id="Rounded" align="center">
+              <div id={isOn ? "Dark-Rounded" : "Rounded"} align="center">
                 <h4 align="center">ADD CITY</h4>
 
                 <Link to="/add">

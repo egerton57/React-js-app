@@ -9,12 +9,12 @@ import { withRouter } from "react-router-dom";
 //Components
 import LoginComponent from "./loginRegister";
 import RouterCompenent from "./../router";
-
+import Navigation from "./Navigation";
 //CSS
 import "../App.css";
 
 import "../CSS/Navigation-Dark.css";
-import '../CSS/Dark-Mode.css';
+import "../CSS/Dark-Mode.css";
 
 import "../CSS/Navigation-Light.css";
 import "../CSS/Light-Mode.css";
@@ -23,7 +23,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null
+      user: null,
+      isDarkModeOn: false,
     };
     this.authListener();
   }
@@ -50,10 +51,18 @@ class App extends Component {
     });
   }
 
+  handleToggleSwitch = () => {
+    this.setState({
+      isDarkModeOn: !this.state.isDarkModeOn
+    })
+  }
+
   render() {
+    let NavBar = this.state.user ? <Navigation onSwitch={this.state.isDarkModeOn} onToggleSwitch={this.handleToggleSwitch}/> : " ";
     return (
       <React.Fragment>
-        <RouterCompenent>
+        {NavBar}
+        <RouterCompenent onSwitch={this.state.isDarkModeOn}>
           <LoginComponent />
         </RouterCompenent>
       </React.Fragment>

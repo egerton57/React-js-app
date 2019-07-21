@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Navigation from "./Navigation";
 import Form from "./Form";
 import Weather from "./Weather";
 
@@ -60,12 +59,14 @@ class AddCity extends Component {
       description,
       error
     } = this.state;
+
+    const isOn = this.props.onSwitch;
+
     return (
       <React.Fragment>
-        <Navigation />
-        <div className="container-fluid Home-Component">
+        <div className={isOn ? "container-fluid Dark-Home-Component" : "container-fluid Home-Component"}>
           <div className="row">
-            <div className="container Add-City-Container">
+            <div className={isOn ? "container Dark-Add-City-Container" : "container Add-City-Container"}>
               <div className="row">
                 <div className="col-md-12">
                   <h3>SELECT LOCATION</h3>
